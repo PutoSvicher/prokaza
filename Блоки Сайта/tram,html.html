@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+	<style>
+
+		#topnav{  /* стиль блока навигации */
+			overflow: hidden; /* обрезать или скрыть контент */
+			background-color: #333; /* цвет фона  */
+		}
+
+		#topnav a{ /* стиль ссылок */
+			float: left; /* позиция  */
+			padding: 15px 17px; /* внутренний отступ текста   */
+			color: #eee; /* цвет текста ссылки  */
+			text-align: center; /* выравнивание текста  */
+			text-decoration: none; /* стиль шрифта  */
+			font-size: medium; /* размер, средний  */
+		}
+
+		#topnav a:hover{ /*  стиль анимации ссылок при наведении */
+			background-color: #ff00ff; /* цвет фона  */
+			color: #000; /* цвет   */
+		}
+
+		#topnav a.active{ /*стиль ссылки актив  */
+			background-color: #8b008b; /* цвет фона ссылки актив */
+			color: #eee; /* цвет текста ссылки актив */
+		}
+
+
+
+	    .text_div {
+          width: 500px;  /* это пока не записывайте */
+          height: 250px;  /*  */
+          position: absolute;  /*  */
+          top: 70%;  /*  */
+          left: 20%;  /*  */
+          margin: -125px 0 0 -125px; /*  */
+              }
+
+              textarea {
+         background-color: purple;
+         border-radius: 5px;
+         height: 200px;
+         max-width: 100%;
+         display: block;
+         margin: 0 auto;
+         border: none;
+         color: white;
+         padding: 15px;
+         box-shadow: 0 0 10px 1px #ff00ff;
+         transition: 0.4s;
+          }
+
+          user agent stylesheet  /*  */
+         div {
+           display: block;  /*  */
+           }	
+		
+	</style>
+	<script>
+		function animateText(textArea){
+			let text = textArea.value;
+			let to = text.length;
+			   from = 0;
+		  animate({
+		  	duration; 5000,
+		    timing: bounce,
+		    draw: function(progress){
+		    	let result = (to - from) * progress + from;
+		    	textArea.value = text.substr(0, Math.cell(result))
+		    }
+		  });
+		}
+
+		function bounce(timeFraction) {
+			for (let a=0, b=1;1; a+=b, b/=2){
+				if(timeFraction >=(7-4 *a)/11){
+					return Math.pow((11 - 6 * a - 11 * timeFraction) / 4, 2) + Math.pow(b,2)
+				}
+			}
+		}
+
+		
+	</script>
+	
+
+	<header id="head"> 
+		<!--Тег header задает «шапку» сайта или раздела, в которой обычно располагается заголовок-->
+		<nav id="topnav"> <!--задает навигацию по сайту. Если на странице несколько блоков ссылок, то в nav обычно помещают приоритетные ссылки-->
+			<a href="#home сорри, всё ещё находится в разработке" class="active">HOME</a> <!--Псевдокласс, дает возможность применения на другие элементы-->
+			<a href="#news сорри, всё ещё находится в разработке">News</a>
+			<a href="#contacts сорри, всё ещё находится в разработке">Contacts</a>
+			<a href="#about сорри, всё ещё находится в разработке">About</a>
+		</nav>
+	</header>
+
+
+	<div class="text_div"><textarea id="textExample" rows="5" cols="60">Напиши сюда текст и запусти анимацию!</textarea> 
+
+    <button class="bt1" onclick="animateText(textExample)">Запустить анимацию набора текста!</button>
+	</div>
+</body>
+</html>
